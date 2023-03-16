@@ -1,15 +1,21 @@
 import React from 'react';
-import { Icon } from '@chakra-ui/react'
+import { IconButton } from '@chakra-ui/react';
 import { HStack } from '@chakra-ui/layout';
-import { FaFacebookF, FaGoogle, FaSpotify, FaShopify} from 'react-icons/fa'
+import { FaSun, FaMoon, FaInstagram,FaGithub, FaLinkedin } from 'react-icons/fa' ;
+import { BsMedium } from 'react-icons/bs';
+import { SiGmail } from 'react-icons/si';
+import { useColorMode } from '@chakra-ui/react';
+
 
 function Social() {
+  const { colorMode, toggleColorMode } = useColorMode();
+
   return (
     <HStack spacing='24'>
-    <Icon as= {FaFacebookF} boxSize='50' />
-    <Icon as={FaGoogle} boxSize='50' />
-    <Icon as={FaSpotify} boxSize='50' />
-    <Icon as={FaShopify} boxSize='50' />
+      <IconButton icon={<FaLinkedin/>} isRound='true' onClick={() => window.open("https://www.linkedin.com/in/koraykaya00/")}/>
+      <IconButton ml={2} icon={<SiGmail/>} isRound='true' onClick={() => window.open("mailto:i.korayykaya@gmail.com")}/>
+      <IconButton ml={2} icon={<FaGithub/>} isRound='true' onClick={() => window.open("https://github.com/koraykaya00")}/>
+      <IconButton ml={2} icon={<BsMedium/>} isRound='true' onClick={() => window.open("https://medium.com/@koray00")}/>
     </HStack>
 
   )
